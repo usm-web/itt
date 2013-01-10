@@ -45,7 +45,11 @@
             <tbody>
             <tr><td></td><td>User:</td></tr>
             @foreach($acls as $acl)
-                 <tr><td>{{ $acl->note }}:</td><td>{{ Form::radio('user', $acl->id)}}</td></tr>
+                @if($acl->id==1)
+                    <tr><td>{{ $acl->note }}:</td><td>{{ Form::radio('user', $acl->id, 'true')}}</td></tr>
+                @else
+                    <tr><td>{{ $acl->note }}:</td><td>{{ Form::radio('user', $acl->id)}}</td></tr>
+                @endif
             @endforeach
             <!--tr>
                 <td>
