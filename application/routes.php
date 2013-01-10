@@ -31,7 +31,7 @@
 |		});
 |
 */
-Route::get('/1', array('as'=>'/1', 'uses'=>'home@index'));
+
 Route::get('/', array('as'=>'/', 'uses'=>'home@index'));
 Route::post('authorization', array('uses'=>'users@authorization'));
 
