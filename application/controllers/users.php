@@ -102,7 +102,12 @@ class Users_Controller extends Base_Controller{
                         'position'=>Input::get('position')
                     ));
                 }
-
+                $user = User::find($id);
+                foreach ($user->roles as $role)
+                {
+                    $role->pivot->acl_id = Input::get('user');
+                    $role->pivot->save();
+                }
                 return Redirect::to_route('users')
                     ->with('message_sys', 'Пользователь изменён успешно!');
             }
