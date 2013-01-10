@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html type="html">
 <html>
 <head>
     <title>
@@ -18,12 +18,12 @@
             {{ HTML::link_to_route('new_ittask', 'Озадачить ИТ') }}
         </li>
         @if(Auth::user()->is_admin)
-            <li>
-                {{ HTML::link_to_route('list_ittask', 'Список задач') }}
-            </li>
-            <li>
-                {{ HTML::link_to_route('my_ittask', 'Мои задачи') }}
-            </li>
+        <li>
+            {{ HTML::link_to_route('list_ittask', 'Список задач') }}
+        </li>
+        <li>
+            {{ HTML::link_to_route('my_ittask', 'Мои задачи') }}
+        </li>
         @endif
         <li>
             {{ HTML::link_to_route('logout', 'Выход') }}
